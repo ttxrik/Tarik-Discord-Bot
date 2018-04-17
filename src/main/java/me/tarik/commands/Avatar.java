@@ -9,7 +9,8 @@ public class Avatar extends RandomColour {
 
     public static MessageEmbed avatar(String x) {
 
-        Color colour = new Color(RandomColour.getRed(), RandomColour.getGreen(), RandomColour.getBlue());
+        Color colour = RandomColour.getColour();
+
         EmbedBuilder em = new EmbedBuilder();
         em.setColor(colour);
         em.setImage(x);

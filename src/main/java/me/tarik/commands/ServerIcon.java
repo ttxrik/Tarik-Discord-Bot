@@ -10,7 +10,8 @@ public class ServerIcon {
 
     public static MessageEmbed getServerIcon(String x, String y) {
 
-        Color colour = new Color(RandomColour.getRed(), RandomColour.getGreen(), RandomColour.getBlue());
+        Color colour = RandomColour.getColour();
+
         EmbedBuilder em = new EmbedBuilder();
         em.setColor(colour);
         em.setAuthor(x);

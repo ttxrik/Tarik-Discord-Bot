@@ -7,6 +7,7 @@ import com.sun.xml.internal.bind.v2.model.core.ID;
 import me.tarik.commands.*;
 
 
+import me.tarik.commands.Invite;
 import me.tarik.utility.ServerJoin;
 import net.dv8tion.jda.client.entities.Application;
 import net.dv8tion.jda.core.*;
@@ -30,7 +31,6 @@ public class App extends ListenerAdapter {
                 Reference.token = in.next();
                 JDA jda = new JDABuilder(AccountType.BOT).setToken(Reference.token).addEventListener(new App()).buildBlocking();
                 jda.getPresence().setGame(Game.streaming(Reference.game, "https://www.twitch.tv/ttxftw"));
-                jda.addEventListener(new App());
                 validation = false;
             }catch (LoginException e) {
                 System.out.println("A login exception has occurred, try again..");
@@ -43,8 +43,6 @@ public class App extends ListenerAdapter {
         while (validation == true);
 
     }
-
-
 
 
 
@@ -63,7 +61,7 @@ public class App extends ListenerAdapter {
             channel.sendMessage(author.getAsMention() + " Pong!").queue();
         }
         else if (msg.getContentDisplay().equalsIgnoreCase(com("invite"))) {
-            channel.sendMessage(" " + Reference.invite).queue();
+            channel.sendMessage(Invite.invite()).queue();
         }
         else if (msg.getContentDisplay().equalsIgnoreCase(com("help"))) {
             channel.sendMessage(Help.helpCommand()).queue();

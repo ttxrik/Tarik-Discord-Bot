@@ -1,4 +1,5 @@
 package me.tarik.embed;
+
 import java.awt.*;
 
 import java.util.Random;
@@ -34,11 +35,12 @@ public class RandomColour {
             return blue;
         }
 
-        public Color colour = new Color(getRed(), getGreen(), getBlue());
+        public static Color colour = new Color(getRed(), getGreen(), getBlue());
 
-    public Color getColour() {
+    public static Color getColour() {
         return colour;
     }
+
 }
 
 

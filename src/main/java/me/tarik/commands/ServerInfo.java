@@ -1,14 +1,9 @@
 package me.tarik.commands;
 
-import com.sun.jna.IntegerType;
 import me.tarik.embed.RandomColour;
 import net.dv8tion.jda.core.EmbedBuilder;
-import net.dv8tion.jda.core.JDA;
-import net.dv8tion.jda.core.OnlineStatus;
 import net.dv8tion.jda.core.Region;
 import net.dv8tion.jda.core.entities.*;
-import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
-import net.dv8tion.jda.core.hooks.ListenerAdapter;
 
 import java.awt.*;
 
@@ -39,10 +34,11 @@ public class ServerInfo {
         String verificationlevel = verificationlvl.toString();
         String serverregion = servregion.toString();
 
+        Color colour = RandomColour.getColour();
+
 
 
         EmbedBuilder embed = new EmbedBuilder();
-        Color colour = new Color(RandomColour.getRed(), RandomColour.getGreen(), RandomColour.getBlue());
 
 
         embed.setColor(colour);
