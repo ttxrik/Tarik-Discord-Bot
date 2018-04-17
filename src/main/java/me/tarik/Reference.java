@@ -5,7 +5,7 @@ import net.dv8tion.jda.core.JDA;
 
 public class Reference {
 
-    public static String token = "NDM1MjMzMjc4NTYwMzA1MTU1.DbWEVA.6HhLn14v75qnQ_u7DIm7drpDR6s";
+    public static String token = "";
     public static String globalPrefix = ".";
     public static String serverPrefix = ".";
     public static String prefix = ".";

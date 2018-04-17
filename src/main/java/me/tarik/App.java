@@ -17,27 +17,37 @@ import net.dv8tion.jda.core.requests.RestAction;
 
 import javax.security.auth.login.LoginException;
 
-/**
- * Invite: https://discordapp.com/oauth2/authorize?client_id=435233278560305155&scope=bot&permissions=2146958591
- * Token: NDM1MjMzMjc4NTYwMzA1MTU1.DbWEVA.6HhLn14v75qnQ_u7DIm7drpDR6s
- *
- */
 public class App extends ListenerAdapter {
 
     public static void main( String[] args ) throws Exception {
 
+        boolean validation = true;
+
+        do {
             try {
-                JDA jda = new JDABuilder(AccountType.BOT).setToken(Reference.token).buildBlocking();
+                Scanner in = new Scanner(System.in);
+                System.out.println("Please enter the bots token: ");
+                Reference.token = in.next();
+                JDA jda = new JDABuilder(AccountType.BOT).setToken(Reference.token).addEventListener(new App()).buildBlocking();
                 jda.getPresence().setGame(Game.streaming(Reference.game, "https://www.twitch.tv/ttxftw"));
                 jda.addEventListener(new App());
-            } catch (LoginException e) {
-                //e.printStackTrace();
-                System.out.println("Try again..");
-            } catch (InterruptedException e) {
-                //e.printStackTrace();
-                System.out.println("Try again..");
+                validation = false;
+            }catch (LoginException e) {
+                System.out.println("A login exception has occurred, try again..");
+                validation = true;
+            }catch (Exception e) {
+                System.out.println("Please try again..");
+                validation = true;
             }
+        }
+        while (validation == true);
+
     }
+
+
+
+
+
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {

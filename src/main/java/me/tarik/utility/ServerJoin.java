@@ -12,7 +12,6 @@ import java.awt.*;
 
 public class ServerJoin {
 
-    @Override
     public void onGuildJoin(GuildJoinEvent event) {
 
         Channel channel = event.getGuild().getDefaultChannel();
@@ -29,7 +28,7 @@ public class ServerJoin {
         Color colour = new Color(RandomColour.getRed(), RandomColour.getGreen(), RandomColour.getBlue());
 
         embed.setColor(colour);
-        embed.setAuthor("Thank you for inviting Tarik Bot to " + ch.getGuild().)
+        //embed.setAuthor("Thank you for inviting Tarik Bot to " + ch.getGuild();
 
 
         return embed.build();
