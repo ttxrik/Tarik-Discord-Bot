@@ -15,13 +15,13 @@ public class Help {
 
         String help = ".help - returns this command\n\n" +
                 ".ping - returns pong!\n\n" +
-                ".invite - returns an invite link.";
+                ".invite - returns an invite link.\n\n" +
+                ".serverinfo - returns info about the server\n\n" +
+                ".servericon - returns the server icon";
 
         EmbedBuilder em = new EmbedBuilder();
 
-        Color colour = RandomColour.getColour();
-
-        em.setColor(colour);
+        em.setColor(RandomColour.getColour());
         em.setAuthor("Tarik Bot v2", "https://discordapp.com", "https://pbs.twimg.com/profile_images/833767319973212161/Ft904pMk_400x400.jpg");
         em.setTitle("Help");
         em.setDescription(help);
